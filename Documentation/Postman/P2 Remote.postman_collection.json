@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "c1c35f43-9695-4868-848f-872c12f93431",
+		"name": "P2 Remote",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://18.221.145.42:8080/webapp/ping",
+					"protocol": "http",
+					"host": [
+						"18",
+						"221",
+						"145",
+						"42"
+					],
+					"port": "8080",
+					"path": [
+						"webapp",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Prototype Entities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://18.217.0.29:8080/webapp/getprototypeentities",
+					"protocol": "http",
+					"host": [
+						"18",
+						"217",
+						"0",
+						"29"
+					],
+					"port": "8080",
+					"path": [
+						"webapp",
+						"getprototypeentities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Prototype Entity",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"string\": \"Test String\",\r\n\t\"dbl\": 123.321,\r\n\t\"bool\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://18.217.0.29:8080/webapp/createprototypeentity",
+					"protocol": "http",
+					"host": [
+						"18",
+						"217",
+						"0",
+						"29"
+					],
+					"port": "8080",
+					"path": [
+						"webapp",
+						"createprototypeentity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Prototype Entity",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n\t\"string\": \"String Updated!\",\r\n\t\"dbl\": 123.321,\r\n\t\"bool\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://18.217.0.29:8080/webapp/updateprototypeentity",
+					"protocol": "http",
+					"host": [
+						"18",
+						"217",
+						"0",
+						"29"
+					],
+					"port": "8080",
+					"path": [
+						"webapp",
+						"updateprototypeentity"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,10 @@
+jwt:
+  header: Authorization
+  prefix: Bearer
+  secret: revature
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

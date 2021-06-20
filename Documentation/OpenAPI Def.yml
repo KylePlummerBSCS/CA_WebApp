@@ -1,0 +1,172 @@
+openapi: 3.0.0
+info:
+  title: Cineholics Anonymous Server API
+  description: This document describes the webapp API for the server backend of Cineholics Anonymous.
+  version: 0.0.9
+
+servers:
+  - url: http://52.14.38.58:5555/
+    description: Current Public IP of dev server (subject to change without warning!)
+  - url: http://localhost:5555/
+   description: Local dev server (run this application)
+components:
+  schemas:
+    NewUserObject:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+        email:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+    LoginObject:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+    TitleSearchResultsObject:
+      type: object
+      properties:
+        Search:
+          type: array
+          items:
+            type: object
+            properties:
+              Title:
+                type: string
+              Year:
+                type: string
+              ImdbID:
+                type: string
+              Type:
+                type: string
+              Poster:
+                type: string
+        TotalResults:
+          type: string
+        Response:
+          type: string
+        Error:
+          type: string
+    IDLookupResultObject:
+      type: object
+      properties:
+        imdbId:
+          type: string
+        title:
+          type: string
+        rated:
+          type: string
+        released:
+          type: string
+        runtime:
+          type: string
+        genre:
+          type: string
+        director:
+          type: string
+        writer:
+          type: string
+        actors:
+          type: string
+        plot:
+          type: string
+        lnguage:
+          type: string
+        country:
+          type: string
+        awards:
+          type: string
+        poster:
+          type: string
+        metascore:
+          type: string
+        imdbRating:
+          type: string
+        imdbVotes:
+          type: string
+        type:
+          type: string
+        dvd:
+          type: string
+        boxOffice:
+          type: string
+        production:
+          type: string
+        website:
+          type: string
+        year:
+          type: string
+  requestBodies:
+    NewUserRequestBody:
+      description: A new user JSON
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/NewUserObject'
+    LoginRequestBody:
+      description: Json containing username and pass for logging in
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/LoginObject'
+paths:
+  /auth:
+    post:
+      summary: Add a new user
+      requestBody:
+        $ref: '#/components/requestBodies/NewUserRequestBody'
+      responses:
+        '201':
+          description: User created.
+  /login:
+    post:
+      summary: user login
+      requestBody:
+        $ref: '#/components/requestBodies/LoginRequestBody'
+      responses:
+        '201':
+          description: Header with JWT
+  /rapidSearch/{movieTitle}/:
+    get:
+      summary: search RapidAPI MDb for movie title
+      parameters:
+        - in: path
+          name: movieTitle
+          schema:
+            type: string
+          required: true
+          description: string title of movie to search for
+      responses:
+        '200':
+          description: movie found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TitleSearchResultsObject'
+  /movieDetails/{imdbId}:
+    get:
+      summary: lookup movie details by imdbId
+      parameters:
+        - in: path
+          name: imdbId
+          schema:
+            type: string
+          required: true
+          description: string IMDb movie ID, starts with tt...
+      responses:
+        '200':
+          description: movie found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IDLookupResultObject'

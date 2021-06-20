@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "dc337005-a91a-463a-805b-a73f25fe64ba",
+		"name": "P2 Local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5555/webapp/ping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"webapp",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Prototype Entities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5555/webapp/getprototypeentities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"webapp",
+						"getprototypeentities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Prototype Entity",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"string\": \"Test String\",\r\n\t\"dbl\": 123.321,\r\n\t\"bool\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5555/webapp/createprototypeentity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"webapp",
+						"createprototypeentity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Prototype Entity",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n\t\"string\": \"String updated again\",\r\n\t\"dbl\": 123.321,\r\n\t\"bool\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5555/webapp/updateprototypeentity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"webapp",
+						"updateprototypeentity"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
