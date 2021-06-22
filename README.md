@@ -15,6 +15,7 @@ RapidAPI MDb lacks the detailed search features of IMDb API.
  https://rapidapi.com/rapidapi/api/movie-database-imdb-alternative
 
 CA utilizes the detailed search features of IMDb API to access popular titles, and titles by genre or cast. IMDb API only allows for 200 calls per day.
+ 
  https://rapidapi.com/rapidapi/api/movie-database-imdb-alternative
  
  
