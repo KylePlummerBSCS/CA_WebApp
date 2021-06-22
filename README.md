@@ -4,6 +4,8 @@ Users can track a history of films watched, as well as keep a wish list of futur
 cinephiles as friends, as well as share their histories and wish lists. Additionally, users can rate and review the films they've seen, or search for 
 new films. Cineholics Anonymous populates data from the Internet Movie Database to keep the library up-to-date.
 
+This repo is only the server side Java code. The Typescript/Javascript UI code can be found here: https://github.com/KylePlummerBSCS/CA_UI
+
 ### External APIs
 CA searches for titles using the OpenMDb API, which returns titles and IDs. These IDs match the unique IDs in the IMDb and RapidAPI MDb APIs.
 
